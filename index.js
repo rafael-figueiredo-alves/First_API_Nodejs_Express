@@ -15,6 +15,26 @@ app.get('/teste', function(req, res){
 
 app.post('/alunos', function(req, res){
     res.send(req.body);
-})
+});
+
+app.put('/alunos', function(req, res){
+    res.send('Entrada PUT da entidade alunos');
+});
+
+app.patch('/alunos', function(req, res){
+    res.send('Entrada Patch da entidade alunos');
+});
+
+app.delete('/alunos', function(req, res){
+    res.send('Entrada Delete da entidade alunos');
+});
+
+app.options('/alunos', function(req, res){
+    res.send('Entrada Options da entidade Alunos');
+});
+
+app.head('/alunos', function(req, res){
+    res.send('Entrada Head da Entidade Alunos');
+});
 
 app.listen(3000);
