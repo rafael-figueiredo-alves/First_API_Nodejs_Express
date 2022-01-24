@@ -7,11 +7,31 @@ app.get('/', function(req, res){
     res.send('Olá mundo!');
 });
 
-const teste = ['Rafaela', 'Davi', 'Jailza']
+const teste = ['Rafaela', 'Davi', 'Jailza'];
+const alunos = [
+                {
+                    "nome" : "Rafael Alves",
+                    "turma" : "English 5.1"
+                },
+                {
+                    "nome" : "Rafaela Alves",
+                    "turma" : "English 10.1"
+                },
+                {
+                    "nome" : "Davi Alves",
+                    "turma" : "Kids 8.3"
+                },
+                {
+                    "nome" : "Jailza Alves",
+                    "turma" : "English 11.2"
+                }
+               ];
 
 app.get('/teste', function(req, res){
     res.send(teste);
 });
+
+app.get('/alunos', (req, res) => res.send(alunos));
 
 app.post('/alunos', function(req, res){
     res.send(req.body);
