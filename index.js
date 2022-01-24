@@ -37,4 +37,4 @@ app.head('/alunos', function(req, res){
     res.send('Entrada Head da Entidade Alunos');
 });
 
-app.listen(3000);
+app.listen(process.env.PORT || 3000);
