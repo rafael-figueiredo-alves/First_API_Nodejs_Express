@@ -4,7 +4,7 @@ const app = express();
 app.use(express.json());
 
 app.get('/', function(req, res){
-    res.send('Olá mundo!');
+    res.send('<html><body><h1>Olá mundo!<br>Esta é a minha primeira API usando NodeJS e ExpressJS!</h1></body></html>');
 });
 
 const teste = ['Rafaela', 'Davi', 'Jailza'];
