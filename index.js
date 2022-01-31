@@ -1,4 +1,16 @@
 const express = require('express');
+const {MongoClient, ObjectId} = require('mongodb');
+require("dotenv").config();
+
+const db_user = process.env.DB_USER;
+const db_pass = process.env.DB_PASS;
+const db_host = process.env.DB_HOST;
+const db_name = process.env.DB_NAME;
+
+const url = `mongodb+srv://${db_user}:${db_pass}@${db_host}`;
+
+
+
 const app = express();
 
 app.use(express.json());
