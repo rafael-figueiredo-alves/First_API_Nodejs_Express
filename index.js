@@ -64,6 +64,7 @@ async function main() {
 
       res.statusCode = 200;
       res.send(documentos);
+      
   });
 
   app.get("/alunos/:id", async function (req, res){
@@ -71,12 +72,21 @@ async function main() {
 
       const item = await Collection.findOne({ _id: new ObjectId(id)});
 
-      res.send(item);
+      if (item != null) {
+          res.status(200).send(item);
+      } else {
+          res.statusCode = 204;
+      }
+      
 
   });
 
-  app.post("/alunos", function (req, res) {
-    res.send(req.body);
+  app.post("/alunos", async function (req, res) {
+      const item = req.body;
+
+      await Collection.insertOne(item);
+
+      res.status(200).send(item);
   });
 
   app.put("/alunos", function (req, res) {
