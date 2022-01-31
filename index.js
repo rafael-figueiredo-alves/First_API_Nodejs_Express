@@ -112,10 +112,10 @@ async function main() {
       const id = req.params.id;
 
       await Collection.deleteOne(
-          { _id: new ObjectId(id)}
+          { _id: ObjectId(id)}
       );
 
-      res.statusCode = 204;
+      res.status(204).send('Aluno removido da base de dados!');
   });
 
 //   app.options("/alunos", function (req, res) {
